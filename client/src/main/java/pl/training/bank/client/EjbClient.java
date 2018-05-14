@@ -5,13 +5,11 @@ import pl.training.bank.api.Bank;
 import pl.training.bank.api.OperationCart;
 import pl.training.bank.api.OperationReporting;
 import pl.training.bank.operation.OperationDto;
-import pl.training.bank.operation.OperationTypeDto;
 
 import javax.jms.ConnectionFactory;
 import javax.jms.JMSContext;
 import javax.jms.Queue;
 import javax.naming.NamingException;
-
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
