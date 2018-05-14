@@ -31,7 +31,7 @@ public class EjbClient {
 
         AccountDto account = bank.createAccount();
 
-        bank.processOperation(new OperationDto(account, DEPOSIT, 1_000L));
+        bank.processOperation(new OperationDto(account, DEPOSIT, 1_001L));
 
         ConnectionFactory connectionFactory = proxyFactory.createProxy(CONNECTION_FACTORY_JNDI);
         Queue queue = proxyFactory.createProxy(BANK_QUEUE_JNDI);

@@ -1,8 +1,9 @@
-package pl.training.bank.operation;
+package pl.training.bank.service.operation;
 
 import lombok.Setter;
 import lombok.extern.java.Log;
 import pl.training.bank.api.OperationCart;
+import pl.training.bank.operation.OperationDto;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

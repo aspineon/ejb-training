@@ -4,7 +4,7 @@ import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import pl.training.bank.entity.account.Account;
 import pl.training.bank.operation.OperationDto;
-import pl.training.bank.operation.OperationExecutorService;
+import pl.training.bank.service.operation.OperationExecutorService;
 import pl.training.bank.service.account.AccountService;
 import pl.training.bank.account.AccountDto;
 import pl.training.bank.api.Bank;

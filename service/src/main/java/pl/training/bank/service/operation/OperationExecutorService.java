@@ -1,4 +1,6 @@
-package pl.training.bank.operation;
+package pl.training.bank.service.operation;
+
+import pl.training.bank.operation.OperationDto;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;

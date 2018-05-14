@@ -1,6 +1,7 @@
-package pl.training.bank.operation;
+package pl.training.bank.service.operation;
 
 import pl.training.bank.api.OperationReporting;
+import pl.training.bank.operation.OperationDto;
 
 import javax.ejb.AsyncResult;
 import javax.ejb.Asynchronous;

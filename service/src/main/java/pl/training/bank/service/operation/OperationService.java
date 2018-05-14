@@ -1,7 +1,8 @@
-package pl.training.bank.operation;
+package pl.training.bank.service.operation;
 
 import lombok.Setter;
 import lombok.extern.java.Log;
+import pl.training.bank.operation.OperationDto;
 import pl.training.bank.service.account.AccountService;
 
 import javax.ejb.ActivationConfigProperty;
