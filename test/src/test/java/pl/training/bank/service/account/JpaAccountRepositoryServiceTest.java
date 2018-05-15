@@ -14,6 +14,8 @@ import pl.training.bank.api.BankException;
 import pl.training.bank.entity.account.Account;
 
 import javax.ejb.EJB;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -24,6 +26,8 @@ public class JpaAccountRepositoryServiceTest {
 
     @EJB
     private AccountRepository accountRepository;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Deployment
     public static JavaArchive createDeployment() {
@@ -38,6 +42,7 @@ public class JpaAccountRepositoryServiceTest {
     public void shouldThrowExceptionWhenAccountDoesNotExist() {
         accountRepository.getByNumber(ACCOUNT_NUMBER);
     }
+
 
     @Cleanup(strategy = CleanupStrategy.USED_ROWS_ONLY, phase = TestExecutionPhase.AFTER)
     @Test
