@@ -5,6 +5,7 @@ import pl.training.bank.account.InsufficientFundsException;
 import pl.training.bank.entity.account.Account;
 import pl.training.bank.service.Timer;
 import pl.training.bank.service.operation.DepositLimitInterceptor;
+import pl.training.bank.service.operation.OperationHistoryInterceptor;
 
 import javax.annotation.Resource;
 import javax.ejb.EJB;
@@ -29,12 +30,13 @@ public class AccountService {
         return account;
     }
 
-    @Interceptors({DepositLimitInterceptor.class, Timer.class})
+    @Interceptors({OperationHistoryInterceptor.class, DepositLimitInterceptor.class, Timer.class})
     public void deposit(long funds, String accountNumber) {
         Account account = accountRepository.getByNumber(accountNumber);
         account.deposit(funds);
     }
 
+    @Interceptors(OperationHistoryInterceptor.class)
     public void withdraw(long funds, String accountNumber) {
         Account account = accountRepository.getByNumber(accountNumber);
         if (account.getBalance() < funds) {
