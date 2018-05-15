@@ -19,7 +19,7 @@ public class AccountService {
 
     @EJB
     private AccountNumberGenerator accountNumberGenerator;
-    @EJB
+    @EJB(beanName = "JpaAccountRepositoryService")
     private AccountRepository accountRepository;
 
     public Account createAccount() {
