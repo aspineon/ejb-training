@@ -3,6 +3,7 @@ package pl.training.bank.service.account;
 import lombok.Setter;
 import pl.training.bank.account.InsufficientFundsException;
 import pl.training.bank.entity.account.Account;
+import pl.training.bank.service.Timer;
 import pl.training.bank.service.operation.DepositLimitInterceptor;
 
 import javax.annotation.Resource;
@@ -28,7 +29,7 @@ public class AccountService {
         return account;
     }
 
-    @Interceptors(DepositLimitInterceptor.class)
+    @Interceptors({DepositLimitInterceptor.class, Timer.class})
     public void deposit(long funds, String accountNumber) {
         Account account = accountRepository.getByNumber(accountNumber);
         account.deposit(funds);
